@@ -17,7 +17,6 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        dd('ここまで');
         if ($request->category !== null) {
             $products = Product::where('category_id', $request->category)->sortable()->paginate(15);
             $total_count = Product::where('category_id', $request->category)->count();
