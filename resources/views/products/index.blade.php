@@ -44,7 +44,7 @@
                 @endforeach
             </div>
         </div>
-        {{ $products->links() }}
+        {{ $products->appends(request()->query())->links() }}
     </div>
 </div>
 @endsection
